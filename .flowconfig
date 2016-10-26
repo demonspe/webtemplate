@@ -1,0 +1,6 @@
+[ignore]
+.*/bin/.*
+.*/node_modules/fbjs/.*
+.*/node_modules/editions/.*
+.*/node_modules/config-chain/test/.*
+.*/node_modules/npmconf/test/.*
