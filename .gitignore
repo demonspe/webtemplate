@@ -22,8 +22,6 @@ log
 .vs
 node_modules
 
-Client/src/TestResults
-Client/src/packages
-Client/src/.nuget
+Server/packages
 
 npm-debug.log*
