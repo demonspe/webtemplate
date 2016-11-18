@@ -4,9 +4,9 @@ namespace WebServer.Controllers
 {
   public class TestController : ApiController
   {
-    public string Get()
+    public Entity Get()
     {
-      return "Hello world";
+      return new Entity() { Id = 1, Name = "TestName" };
     }
   }
 }

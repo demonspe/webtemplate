@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { loadUserName } from './api';
+import { getEntity } from './api';
 
 export type TestButtonProps = {
   text: string;
@@ -10,8 +10,8 @@ class TestButton extends React.Component {
   props: TestButtonProps;
 
   onClick() {
-    loadUserName()
-      .then(userName => alert(userName))
+    getEntity()
+      .then(entity => alert('Entity loaded: ' + entity.Name))
       .catch(error => alert(error.message));
   }
 

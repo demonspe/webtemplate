@@ -1,6 +1,8 @@
 //@flow
 
-export function loadUserName(): Promise<string> {
+import type { Entity } from './entity';
+
+export function getEntity(): Promise<Entity> {
   const options = {
     headers: { 'Content-Type': 'application/json' },
     method: 'GET'
