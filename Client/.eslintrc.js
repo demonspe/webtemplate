@@ -12,7 +12,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "plugin:xo/recommended"
+    "plugin:unicorn/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -24,7 +24,7 @@ module.exports = {
   "plugins": [
     "react",
     "import",
-    "xo",
+    "unicorn",
     "flowtype"
   ],
   "settings": {
@@ -53,6 +53,13 @@ module.exports = {
     "yoda": "error",
     // Stylistic Issues
     "block-spacing": "error",
+    "brace-style": [
+      "error",
+      "stroustrup",
+      {
+        "allowSingleLine": true
+      }
+    ],
     "indent": [
       "error",
       2,
@@ -95,10 +102,13 @@ module.exports = {
     "no-spaced-func": "error",
     "space-before-blocks": "error",
     "space-unary-ops": "error",
+    "eqeqeq": ["error", "smart"],
+    "prefer-arrow-callback": ["error"],
     // ECMAScript 6
     "arrow-spacing": "error",
     "no-duplicate-imports": "error",
     "no-useless-constructor": "error",
+    "no-useless-return": "error",
     "no-var": "error",
     // Import
     "import/no-unresolved": "error",
@@ -106,16 +116,17 @@ module.exports = {
     "import/default": "error",
     "import/namespace": "error",
     "import/export": "error",
+    "import/no-absolute-path": "error",
     "import/no-named-as-default": "error",
     "import/no-named-as-default-member": "error",
     "import/no-mutable-exports": "error",
     "import/imports-first": "error",
+    "import/no-deprecated": "error",
     "import/order": "error",
     "import/newline-after-import": "error",
-    // xo
-    "xo/catch-error-name": "off",
-    "eqeqeq": ["error", "smart"],
-    "prefer-arrow-callback": ["error"],
+    "import/no-named-default": "error",
+    // unicorn
+    "unicorn/catch-error-name": "off",
     // flowtype
     "flowtype/boolean-style": ["error", "boolean"],
     "flowtype/delimiter-dangle": ["error", "only-multiline"],
@@ -132,6 +143,30 @@ module.exports = {
     "flowtype/space-before-generic-bracket": "error",
     "flowtype/semi": "error",
     "flowtype/union-intersection-spacing": "error",
-    "flowtype/valid-syntax": "error"
+    "flowtype/valid-syntax": "error",
+    "flowtype/use-flow-type": "error",
+    // react
+    "react/no-children-prop": "error",
+    "react/no-did-mount-set-state": ["error", "disallow-in-func"],
+    "react/no-did-update-set-state": ["error", "disallow-in-func"],
+    "react/no-multi-comp": ["error", { "ignoreStateless": true }],
+    "react/no-string-refs": "error",
+    "react/no-unescaped-entities": "error",
+    "react/prefer-es6-class": ["error", "always"],
+    "react/prefer-stateless-function": "error",
+    "react/style-prop-object": "error",
+    "react/jsx-boolean-value": ["error", "always"],
+    "react/jsx-closing-bracket-location": ["error", "after-props"],
+    "react/jsx-curly-spacing": ["error", "never"],
+    "react/jsx-equals-spacing": ["error", "never"],
+    "react/jsx-indent": ["error", 2],
+    "react/jsx-indent-props": ["error", 2],
+    "react/jsx-key": "error",
+    "react/jsx-pascal-case": "error",
+    "react/jsx-tag-spacing": ["error", {
+      "closingSlash": "never",
+      "beforeSelfClosing": "always",
+      "afterOpening": "never"
+    }]
   }
 };
