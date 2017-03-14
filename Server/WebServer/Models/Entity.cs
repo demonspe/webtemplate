@@ -1,6 +1,4 @@
-﻿using System.Web.Http;
-
-namespace WebServer.Controllers
+﻿namespace WebServer.Models
 {
   public class Entity
   {

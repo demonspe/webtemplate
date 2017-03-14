@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using WebServer.Models;
 
 namespace WebServer.Controllers
 {
