@@ -3,7 +3,7 @@ import React from 'react';
 import { getEntity } from './api';
 
 export type TestButtonProps = {
-  text: string;
+  text: string
 };
 
 class TestButton extends React.Component {

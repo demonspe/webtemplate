@@ -3,7 +3,7 @@
     "dbaeumer.vscode-eslint",
     "dzannotti.vscode-babel-coloring",
     "eg2.vscode-npm-script",
-    "rtorr.vscode-flow",
+    "flowtype.flow-for-vscode",
     "TwentyChung.jsx"
   ]
 }

@@ -104,6 +104,7 @@ module.exports = {
     "space-unary-ops": "error",
     "eqeqeq": ["error", "smart"],
     "prefer-arrow-callback": ["error"],
+    "rest-spread-spacing": ["error", "never"],
     // ECMAScript 6
     "arrow-spacing": "error",
     "no-duplicate-imports": "error",
@@ -129,6 +130,7 @@ module.exports = {
     "unicorn/catch-error-name": "off",
     // flowtype
     "flowtype/boolean-style": ["error", "boolean"],
+    "flowtype/define-flow-type": "error",
     "flowtype/delimiter-dangle": ["error", "only-multiline"],
     "flowtype/generic-spacing": "error",
     "flowtype/require-parameter-type": ["error", {
@@ -138,14 +140,14 @@ module.exports = {
       "excludeArrowFunctions": true
     }],
     "flowtype/require-valid-file-annotation": ["error", "always"],
-    "flowtype/space-after-type-colon": "error",
-    "flowtype/space-before-type-colon": "error",
     "flowtype/space-before-generic-bracket": "error",
     "flowtype/semi": "error",
     "flowtype/union-intersection-spacing": "error",
     "flowtype/valid-syntax": "error",
     "flowtype/use-flow-type": "error",
+    "flowtype/object-type-delimiter": ["error", "comma"],
     // react
+    "react/display-name": "off",
     "react/no-children-prop": "error",
     "react/no-did-mount-set-state": ["error", "disallow-in-func"],
     "react/no-did-update-set-state": ["error", "disallow-in-func"],
@@ -167,6 +169,7 @@ module.exports = {
       "closingSlash": "never",
       "beforeSelfClosing": "always",
       "afterOpening": "never"
-    }]
+    }],
+    "react/void-dom-elements-no-children": "error"
   }
 };
