@@ -1,24 +1,32 @@
 // @flow
+
 import React from 'react';
+import { autobind } from 'core-decorators';
 import { getEntity } from './api';
 
-export type TestButtonProps = {
+type TestButtonProps = {
   text: string
 };
 
-class TestButton extends React.Component {
+@autobind
+export default class TestButton extends React.Component {
   props: TestButtonProps;
 
-  onClick() {
-    getEntity()
-      .then(entity => alert('Entity loaded: ' + entity.Name))
-      .catch(error => alert(error.message));
+  async handleClick(): Promise<void> {
+    try {
+      const entity = await getEntity();
+      alert(`Entity loaded: ${entity.Name}`);
+    }
+    catch (error) {
+      alert(error.message);
+    }
   }
 
-  render(): ?React.Element<any> {
-    return <input type='button' value={this.props.text} onClick={() => this.onClick()} />;
+  render(): React.Element<any> {
+    return (
+      <input type='button'
+        value={this.props.text}
+        onClick={this.handleClick} />
+    );
   }
 }
-
-export default TestButton;
-

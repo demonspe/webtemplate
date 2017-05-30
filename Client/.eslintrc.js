@@ -12,7 +12,8 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "plugin:unicorn/recommended"
+    "plugin:unicorn/recommended",
+    "plugin:promise/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -25,7 +26,8 @@ module.exports = {
     "react",
     "import",
     "unicorn",
-    "flowtype"
+    "flowtype",
+    "promise"
   ],
   "settings": {
     "flowtype": {
@@ -34,7 +36,6 @@ module.exports = {
   },
   "rules": {
     // Possible Errors
-    "no-console": "off",
     "valid-jsdoc": [
       "error",
       {
@@ -111,6 +112,8 @@ module.exports = {
     "no-useless-constructor": "error",
     "no-useless-return": "error",
     "no-var": "error",
+    // Unicode
+    "unicode-bom": ["error", "never"],
     // Import
     "import/no-unresolved": "error",
     "import/named": "error",
@@ -140,6 +143,8 @@ module.exports = {
       "excludeArrowFunctions": true
     }],
     "flowtype/require-valid-file-annotation": ["error", "always"],
+    "flowtype/space-after-type-colon": "error",
+    "flowtype/space-before-type-colon": "error",
     "flowtype/space-before-generic-bracket": "error",
     "flowtype/semi": "error",
     "flowtype/union-intersection-spacing": "error",
@@ -149,6 +154,8 @@ module.exports = {
     // react
     "react/display-name": "off",
     "react/no-children-prop": "error",
+    "react/no-danger": "error",
+    "react/no-danger-with-children": "error",
     "react/no-did-mount-set-state": ["error", "disallow-in-func"],
     "react/no-did-update-set-state": ["error", "disallow-in-func"],
     "react/no-multi-comp": ["error", { "ignoreStateless": true }],
@@ -156,6 +163,7 @@ module.exports = {
     "react/no-unescaped-entities": "error",
     "react/prefer-es6-class": ["error", "always"],
     "react/prefer-stateless-function": "error",
+    "react/self-closing-comp": "error",
     "react/style-prop-object": "error",
     "react/jsx-boolean-value": ["error", "always"],
     "react/jsx-closing-bracket-location": ["error", "after-props"],
@@ -170,6 +178,33 @@ module.exports = {
       "beforeSelfClosing": "always",
       "afterOpening": "never"
     }],
-    "react/void-dom-elements-no-children": "error"
+    "react/sort-comp": [
+      "error",
+      {
+        order: [
+          "type-annotations",
+          "lifecycle",
+          "static-methods",
+          "everything-else",
+          "rendering"
+        ],
+        groups: {
+          rendering: [
+            "/^render.+$/",
+            "render"
+          ]
+        }
+      }
+    ],
+    "react/void-dom-elements-no-children": "error",
+    "promise/prefer-await-to-then": "error",
+    "promise/prefer-await-to-callbacks": "error",
+    "promise/avoid-new": "off",
+    // autobind
+    "react/jsx-no-bind": [ "error", {
+      "ignoreRefs": true,
+      "allowArrowFunctions": true,
+      "allowBind": false
+    }]
   }
 };

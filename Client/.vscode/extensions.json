@@ -4,6 +4,7 @@
     "dzannotti.vscode-babel-coloring",
     "eg2.vscode-npm-script",
     "flowtype.flow-for-vscode",
-    "TwentyChung.jsx"
+    "TwentyChung.jsx",
+    "msjsdiag.debugger-for-chrome"
   ]
 }

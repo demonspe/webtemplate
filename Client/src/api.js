@@ -1,16 +1,15 @@
-//@flow
+// @flow
 
-import type { Entity } from './entity';
+import type { Entity } from './types/entity';
 
-export function getEntity(): Promise<Entity> {
+export async function getEntity(): Promise<Entity> {
   const options = {
     headers: { 'Content-Type': 'application/json' },
     method: 'GET'
   };
-  return fetch('api/test', options).then(r => {
-    if (r.status === 200)
-      return r.json();
-    // Сообщение об ошибке.
-    throw new Error('Error: ' + r.statusText);
-  });
+  const response = await fetch('api/test', options);
+  if (response.status === 200) {
+    return await response.json();
+  }
+  throw new Error(`Error: ${response.statusText}`);
 }
