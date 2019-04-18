@@ -5,7 +5,5 @@
     "editor.tabSize": 2,
     "editor.formatOnType": true,
     "files.trimTrailingWhitespace": true,
-    "javascript.validate.enable": false,
-    "flow.pathToFlow": "node_modules/.bin/flow",
-    "flow.useNPMPackagedFlow": true
+    "javascript.validate.enable": false
 }

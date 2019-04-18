@@ -1,8 +1,6 @@
-// @flow
+import { IEntity } from './types/entity';
 
-import type { Entity } from './types/entity';
-
-export async function getEntity(): Promise<Entity> {
+export async function getEntity(): Promise<IEntity> {
   const options = {
     headers: { 'Content-Type': 'application/json' },
     method: 'GET'

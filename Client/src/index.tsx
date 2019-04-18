@@ -1,7 +1,6 @@
-// @flow
-
-import React from 'react';
+import * as React from 'react';
 import { render } from 'react-dom';
+
 import TestButton from './test-button';
 
 require('./styles/app.css');
