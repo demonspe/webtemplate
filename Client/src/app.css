@@ -1,0 +1,36 @@
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.box .row {
+  border: 1px solid rgb(53, 53, 53);
+}
+
+.box .row.header {
+  flex: 0 1 auto;
+}
+
+.box .row.content {
+  flex: 1 1 auto;
+}
+
+.box .row.footer {
+  flex: 0 1 50px;
+}
+
+.content-box{
+  display: flex;
+  height: 100%;
+}
+
+.content-box .explorer{
+  flex: 1;
+  border: 1px solid rgb(53, 53, 53);
+}
+
+.content-box .content{
+  flex: 4;
+  border: 1px solid rgb(53, 53, 53);
+}

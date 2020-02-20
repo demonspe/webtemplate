@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 
-import TestButton from './test-button';
+import App from './app';
 
-require('./styles/app.css');
+require('./index.css');
 
 render(
-  <TestButton text='Click me' />,
+  <App />,
   document.getElementById('root')
 );
