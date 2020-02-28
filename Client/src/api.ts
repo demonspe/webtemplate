@@ -1,4 +1,4 @@
-import { IEntity } from './types/entity';
+import { ICategory, IEntity } from './types/entity';
 
 export async function getEntity(): Promise<IEntity> {
   const options = {
@@ -6,6 +6,18 @@ export async function getEntity(): Promise<IEntity> {
     method: 'GET'
   };
   const response = await fetch('api/test', options);
+  if (response.status === 200) {
+    return await response.json();
+  }
+  throw new Error(`Error: ${response.statusText}`);
+}
+
+export async function getAllCategories(): Promise<Array<ICategory>> {
+  const options = {
+    headers: { 'Content-Type': 'application/json' },
+    method: 'GET'
+  };
+  const response = await fetch('api/categories/all', options);
   if (response.status === 200) {
     return await response.json();
   }

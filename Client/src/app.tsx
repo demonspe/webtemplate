@@ -2,7 +2,7 @@ import React from 'react';
 
 import './app.css';
 import Header from './components/header';
-import Explorer from './components/explorer';
+import Explorer from './components/explorer/explorer';
 import Content from './components/content';
 
 export default class App extends React.Component {
