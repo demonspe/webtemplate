@@ -13,6 +13,9 @@ interface IExplorerState{
   categories: Array<ICategory>;
 }
 
+/**
+ * Проводник по категориям товаров.
+ */
 export default class Explorer extends React.Component<IExplorerProps, IExplorerState> {
   constructor(props: IExplorerProps) {
     super(props);
@@ -22,18 +25,17 @@ export default class Explorer extends React.Component<IExplorerProps, IExplorerS
   public async componentDidMount() {
     getAllCategories().then(value => {
       this.setState({ categories: value });
-      console.log(value);
     });
   }
+
   public render(): React.ReactNode {
     if (this.state.categories.length > 0) {
       const items = this.state.categories.map((c) =>
         <ExplorerItem Id={c.Id} Name={c.Name} key={c.Id} />
       );
-      return <ul>{items}</ul>;
+      return <div>{items}</div>;
     }
-    else {
-      return null;
-    }
+
+    return null;
   }
 }

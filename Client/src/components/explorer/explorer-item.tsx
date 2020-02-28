@@ -7,6 +7,6 @@ export default class ExplorerItem extends React.Component<ICategory> {
   }
 
   public render(): React.ReactNode {
-    return <div>{this.props.Name}</div>;
+    return <li>{this.props.Name}</li>;
   }
 }
