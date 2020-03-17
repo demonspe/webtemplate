@@ -1,0 +1,11 @@
+.cart {
+  height: 100%;
+  background: #f6f6f6;
+
+}
+
+.cart__items-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}

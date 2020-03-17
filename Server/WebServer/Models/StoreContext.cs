@@ -19,9 +19,9 @@ namespace WebServer.Models
     public string Name { get; set; }
 
     /// <summary>
-    /// Id категории к которой относится товар.
+    /// Категория, к которой относится товар.
     /// </summary>
-    public Guid CategoryId { get; set; }
+    public Category Category { get; set; }
 
     /// <summary>
     /// Конструктор.
@@ -64,7 +64,7 @@ namespace WebServer.Models
     {
       if (product == null)
         return;
-      product.CategoryId = this.Id;
+      product.Category = this;
       this.products.Add(product);
     }
 
@@ -85,7 +85,7 @@ namespace WebServer.Models
   /// </summary>
   public class Cart
   {
-    private List<Product> products = new List<Product>();
+    private readonly HashSet<Product> products = new HashSet<Product>();
 
     /// <summary>
     /// Коллекция товаров в корзине.

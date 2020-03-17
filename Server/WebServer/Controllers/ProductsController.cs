@@ -11,13 +11,23 @@ namespace WebServer.Controllers
     /// <summary>
     /// Получить список товаров категории.
     /// </summary>
-    /// <param name="id">Guid категории</param>
+    /// <param name="name">Имя категории</param>
     /// <returns>Массив товаров из этой категории.</returns>
     [HttpGet]
-    public Product[] FromCategory(Guid id)
+    public Product[] FromCategory(string name)
     {
-      var category = DataStore.Instance.Categories.FirstOrDefault(c => c.Id == id);
-      return category.GetProducts().ToArray();
+      var category = DataStore.Instance.Categories.FirstOrDefault(c => c.Name == name);
+      return category?.GetProducts().ToArray();
+    }
+
+    /// <summary>
+    /// Получить список товаров в корзине.
+    /// </summary>
+    /// <returns>Массив товаров из корзины.</returns>
+    [HttpGet]
+    public Product[] FromCart()
+    {
+      return DataStore.Instance.Cart.Products.ToArray();
     }
   }
 }

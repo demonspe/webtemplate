@@ -1,0 +1,18 @@
+.categories-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.categories-list__item {
+  transition: 100ms;
+  font-size: 16px;
+  padding: 10px;
+  padding-left: 12px;
+  color: black;
+  text-decoration: none;
+}
+.categories-list__item:hover {
+  transition: 100ms;
+  padding-left: 20px;
+  background: #cecfd3;
+}
